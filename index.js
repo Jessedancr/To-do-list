@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 }); // Middleware to attach DB to all request bodies
 app.use(
 	session({
-		secret: "MySecretKey",
+		secret: process.env.SESSION_SECRET_KEY,
 		resave: false,
 		saveUninitialized: false,
 		store: MongoStore.create({
